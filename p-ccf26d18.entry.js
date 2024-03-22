@@ -932,29 +932,29 @@ const Tt =
 const Mt = Tt;
 const Pt = class {
   navigationChanged() {
-    console.log('navigationChanged');
+    console.log("navigationChanged");
     this.setNavigationParsed(this.getParsedNavigationProp());
   }
   indexChanged() {
-    console.log('indexChanged');
+    console.log("indexChanged");
     this.indexParsed = s(this.index);
   }
   loginChanged() {
-    console.log('loginChanged');
+    console.log("loginChanged");
     this.loginParsed = s(this.login);
   }
   slotsChanged() {
-    console.log('slotsChanged');
+    console.log("slotsChanged");
     this.slotsParsed = s(this.slots) || [];
   }
   onKeyDown(e) {
-    console.log('onKeyDown');
+    console.log("onKeyDown");
     if (e.key === "Escape") {
       this.didClickOnAnotherSdxHeaderMenuEl = false;
     }
   }
   onWindowMouseup(e) {
-    console.log('onWindowMouseup');
+    console.log("onWindowMouseup");
     this.didClickOnAnotherSdxHeaderMenuEl = false;
     if (!this.openSdxHeaderMenuEl) {
       return;
@@ -968,14 +968,14 @@ const Pt = class {
     }
   }
   onWindowScroll() {
-    console.log('onWindowScroll');
+    console.log("onWindowScroll");
     if (!this.componentDidLoadComplete) {
       return;
     }
     this.makeHeaderSticky();
   }
   onWindowResizeDebounced() {
-    console.log('onWindowResizeDebounced');
+    console.log("onWindowResizeDebounced");
     const e = innerWidth !== this.innerWidth;
     if (!e) {
       return;
@@ -989,17 +989,17 @@ const Pt = class {
     }, 10);
   }
   async openSlot(e) {
-    console.log('openSlot');
+    console.log("openSlot");
     const t = this.slotsWithSdxHeaderMenuEl.get(e);
     t === null || t === void 0 ? void 0 : t.open();
   }
   async closeSlot(e) {
-    console.log('closeSlot');
+    console.log("closeSlot");
     const t = this.slotsWithSdxHeaderMenuEl.get(e);
     t === null || t === void 0 ? void 0 : t.close();
   }
   async getNavigationHelpers() {
-    console.log('getNavigationHelpers');
+    console.log("getNavigationHelpers");
     return this.navigationHelpers;
   }
   constructor(e) {
@@ -1088,7 +1088,7 @@ const Pt = class {
     Ot((e, t) => this.onExternalLinkClick(e, t));
   }
   componentDidLoad() {
-    console.log('componentDidLoad');
+    console.log("componentDidLoad");
     var e, t;
     this.layout();
     (e = this.slotsSdxScrollViewEl) === null || e === void 0 ? void 0 : e.scrollToLeft(0, false);
@@ -1096,11 +1096,11 @@ const Pt = class {
     this.componentDidLoadComplete = true;
   }
   componentDidUpdate() {
-    console.log('componentDidUpdate');
+    console.log("componentDidUpdate");
     this.layout();
   }
   headerMenuDisplayChangeCallback(e, t, i) {
-    console.log('headerMenuDisplayChangeCallback');
+    console.log("headerMenuDisplayChangeCallback");
     var n, o;
     const a = this.sdxBackdropEl;
     switch (t) {
@@ -1156,7 +1156,7 @@ const Pt = class {
     }
   }
   getParsedNavigationProp() {
-    console.log('getParsedNavigationProp');
+    console.log("getParsedNavigationProp");
     const e = s(this.navigation) || {};
     return {
       primary: { children: [] },
@@ -1167,7 +1167,7 @@ const Pt = class {
     };
   }
   setNavigationParsed(e) {
-    console.log('setNavigationParsed');
+    console.log("setNavigationParsed");
     this.navigationParsed = e;
     const t = this.navigationHelpers;
     const i = (e) => {
@@ -1197,7 +1197,7 @@ const Pt = class {
     this.createBreadcrumbListScriptEl();
   }
   onExternalLinkClick(e, t) {
-    console.log('onExternalLinkClick');
+    console.log("onExternalLinkClick");
     var i;
     if (e.ctrlKey || e.metaKey || e.shiftKey) {
       return;
@@ -1209,7 +1209,7 @@ const Pt = class {
     }
   }
   createBreadcrumbListScriptEl() {
-    console.log('createBreadcrumbListScriptEl');
+    console.log("createBreadcrumbListScriptEl");
     var e;
     (e = this.breadcrumbListScriptEl) === null || e === void 0 ? void 0 : e.remove();
     if (!this.hasBreadcrumbs()) {
@@ -1221,7 +1221,7 @@ const Pt = class {
     this.el.after(this.breadcrumbListScriptEl);
   }
   createListForDesktop(t, i, n) {
-    console.log('createListForDesktop');
+    console.log("createListForDesktop");
     const o = _t(this.navigationParsed[t].children);
     if (!o.length) {
       return;
@@ -1233,7 +1233,7 @@ const Pt = class {
     );
   }
   createListForMobile(t, i) {
-    console.log('createListForMobile');
+    console.log("createListForMobile");
     const n = _t(this.navigationParsed[t].children);
     if (!n.length) {
       return;
@@ -1247,7 +1247,7 @@ const Pt = class {
     );
   }
   getMaxDepth(e, t = [], i = []) {
-    console.log('getMaxDepth');
+    console.log("getMaxDepth");
     var n;
     if ((n = e.children) === null || n === void 0 ? void 0 : n.length) {
       e.children.forEach((e) => {
@@ -1263,7 +1263,7 @@ const Pt = class {
     return Math.max(...i.map((e) => e.length));
   }
   createBreadcrumbListSchema() {
-    console.log('createBreadcrumbListSchema');
+    console.log("createBreadcrumbListSchema");
     return {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -1273,27 +1273,27 @@ const Pt = class {
     };
   }
   getMetaHeight() {
-    console.log('getMetaHeight');
+    console.log("getMetaHeight");
     var e;
     return ((e = this.metaWrapperEl) === null || e === void 0 ? void 0 : e.clientHeight) || 0;
   }
   hasBreadcrumbs() {
-    console.log('hasBreadcrumbs');
+    console.log("hasBreadcrumbs");
     return this.breadcrumbList.length > 1;
   }
   hasLeftHandMenu() {
-    console.log('hasLeftHandMenu');
+    /*console.log("hasLeftHandMenu");
     const e = document.getElementById("sdx-left-hand-menu-outlet");
-    return !!(this.getLeftHandMenuItems().length && e);
+    return !!(this.getLeftHandMenuItems().length && e);*/
   }
   getLeftHandMenuItems() {
-    console.log('getLeftHandMenuItems');
+    console.log("getLeftHandMenuItems");
     var e;
     const t = this.breadcrumbList.findIndex((e) => e.hasLeftHandMenu);
     return ((e = this.breadcrumbList[t]) === null || e === void 0 ? void 0 : e.children) || [];
   }
   getBackdropStyle(e) {
-    console.log('getBackdropStyle');
+    console.log("getBackdropStyle");
     const t = 5e4 - 3;
     switch (e) {
       case "meta":
@@ -1307,7 +1307,7 @@ const Pt = class {
     }
   }
   layout() {
-    console.log('layout');
+    console.log("layout");
     this.componentEl.classList.remove("desktop");
     this.componentEl.classList.remove("mobile");
     this.componentEl.classList.add("desktop");
@@ -1338,7 +1338,7 @@ const Pt = class {
     }
   }
   showSecondaryIfEnoughSpace() {
-    console.log('showSecondaryIfEnoughSpace');
+    console.log("showSecondaryIfEnoughSpace");
     if (this.secondaryEl) {
       this.secondaryEl.style.display = "none";
     }
@@ -1361,7 +1361,7 @@ const Pt = class {
     }
   }
   showSlotLabelsIfEnoughSpace() {
-    console.log('showSlotLabelsIfEnoughSpace');
+    console.log("showSlotLabelsIfEnoughSpace");
     this.slotLabelEls.forEach((e) => (e.style.display = "block"));
     const e =
       x(this.mainContainerEl) -
@@ -1375,7 +1375,7 @@ const Pt = class {
     }
   }
   setDisplayToDesktopOrMobile() {
-    console.log('setDisplayToDesktopOrMobile');
+    console.log("setDisplayToDesktopOrMobile");
     const e =
       x(this.metaPullLeftEl, true) +
       x(this.primaryListEl, true) +
@@ -1394,7 +1394,7 @@ const Pt = class {
     this.display = i && n && y("lg") ? "desktop" : "mobile";
   }
   makeHeaderSticky() {
-    console.log('makeHeaderSticky');
+    console.log("makeHeaderSticky");
     const e = this.getMetaHeight();
     const t = scrollY < e;
     this.mainWrapperEl.style.width = "";
@@ -1408,7 +1408,7 @@ const Pt = class {
     }
   }
   hidePartsOnMobile() {
-    console.log('hidePartsOnMobile');
+    console.log("hidePartsOnMobile");
     if (this.display === "desktop") {
       return;
     }
@@ -1426,7 +1426,7 @@ const Pt = class {
     }
   }
   createItemForMeta(t) {
-    console.log('createItemForMeta');
+    console.log("createItemForMeta");
     const i = _t(t.children);
     let n;
     return e(
@@ -1454,7 +1454,7 @@ const Pt = class {
     );
   }
   createItemForMain(t) {
-    console.log('createItemForMain');
+    console.log("createItemForMain");
     const i = _t(t.children);
     const n = Et(t);
     let o;
@@ -1489,7 +1489,7 @@ const Pt = class {
     );
   }
   createItemForSlot(t, i, n) {
-    console.log('createItemForSlot');
+    console.log("createItemForSlot");
     let o;
     return e(
       "li",
@@ -1540,7 +1540,7 @@ const Pt = class {
     );
   }
   createInitials(e) {
-    console.log('createInitials');
+    console.log("createInitials");
     if (!e) {
       return "";
     }
@@ -1551,11 +1551,11 @@ const Pt = class {
       .join("");
   }
   getComponentClassNames() {
-    console.log('getComponentClassNames');
+    console.log("getComponentClassNames");
     return { component: true, closed: true, [k(this.el)]: true };
   }
   render() {
-    console.log('render');
+    console.log("render");
     var t, i, a, r;
     const { secondary: l, main: s } = this.navigationParsed;
     this.slotsWithSdxHeaderMenuEl.clear();
@@ -2015,7 +2015,7 @@ const Vz = class {
     return this.main.headerMenuDisplayChangeCallback(e, t, i);
   }
   getParsedNavigationProp() {
-    return this.main.getParsedNavigationProp()
+    return this.main.getParsedNavigationProp();
   }
   setNavigationParsed(e) {
     return this.main.setNavigationParsed(e);
@@ -2103,7 +2103,7 @@ const Vz = class {
       slots: ["slotsChanged"],
     };
   }
-}
+};
 Vz.style = Mt;
 Wt.style = Ft;
 //export { Pt as sdx_header, Ht as sdx_header_left_hand_menu, Wt as sdx_header_menu };
