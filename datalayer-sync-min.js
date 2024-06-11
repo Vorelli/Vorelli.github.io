@@ -1,4 +1,5 @@
 window.dataLayer = [globalThis.window];
+window["dashed-weird-name!!!1232233-djdkfjf"] = [globalThis.window];
 /*(window.getCookie =
   window.getCookie ||
   function(e) {
