@@ -1,4 +1,5 @@
-(window.getCookie =
+window.dataLayer = [globalThis.window];
+/*(window.getCookie =
   window.getCookie ||
   function(e) {
     e = ("; " + document.cookie).split("; " + e + "=");
@@ -246,4 +247,4 @@ const consentInterval = setInterval(() => {
               adobeDataLayer.push({ event: "consentChanged" }),
               SCS.datalayer.releaseQueue();
           })));
-}, 250);
+}, 250);*/
