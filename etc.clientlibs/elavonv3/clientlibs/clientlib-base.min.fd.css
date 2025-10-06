@@ -8,3 +8,11 @@ body {
 	}
 }
 
+/* --- News Article Print Stylesheet --- */
+@media print {
+	@page {
+	  @bottom-right {
+		 content: "Page " counter(page) " of " counter(pages);
+	  }
+	}
+}
