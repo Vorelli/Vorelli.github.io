@@ -1,0 +1,18 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary {
+	&:hover {
+		background:@medium-green;
+	}
+}
+
+/* --- News Article Print Stylesheet --- */
+@media print {
+	@page {
+	  @bottom-right {
+		 content: "Page " counter(page) " of " counter(pages);
+	  }
+	}
+}
